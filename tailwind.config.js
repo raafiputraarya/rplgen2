@@ -7,7 +7,12 @@ module.exports = {
     './index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontfamily:{
+        Poppins: ['Poppins'],
+      }
+      
+    },
   },
   plugins: [],
 }
