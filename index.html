@@ -33,12 +33,7 @@
             flex-direction: column;
         }
     }
-    .paragraf{
-        @media only screen and (min-width: 0px) and (max-width: 770px){
-            padding-right: 140px;
-            width: 500px;
-        }
-    }
+    
 </style>
 <!--js button-->
 <script>
@@ -100,11 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <body>
-    <nav class="fixed bg-blue-950 h-[80px] w-screen z-50 shadow-xl">
+    <nav class="fixed bg-blue-950 h-[80px] w-full z-50 shadow-xl">
         <div class="container h-[80px] mx-auto py-6 px-8 flex items-center justify-between">
             
                <div class="text-lg text-white font-[Poppins] cursor-pointer z-[-1] flex  flex-col">RPL<span class="font-[Poppins] mt-[-10px] text-yellow-300"> Finance</span></div>
-               <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:bg-yellow-300" name="Menu" onclick="Menu(this)" width="35px" height="35px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+               <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:text-yellow-300" name="Menu" onclick="Menu(this)" width="35px" height="35px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                 </svg>
             
@@ -121,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li class="mx-4 my-6 md:my-o">
                     <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Profile</a>
                 </li>
-                <buttom class="bg-white text-black font-[Poppins] px-2 py-2 mx-4 hover:text-yellow-300 hover:text-zinc-50 duration-200 rounded-md">Beta Version</buttom>
+                <buttom class="bg-white text-black font-[Poppins] px-2 py-2 mx-4 hover:text-yellow-300 duration-200 rounded-md">Beta Version</buttom>
             </ul>
                        
         </div>
@@ -130,15 +125,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <br><br><br>
     <!--homepage-->
-    <div class="background w-full h-[1024px] bg-gradient-to-r from-blue-950 to-orange-500">
+    <div class="background w-full h-[1024px] bg-gradient-to-r from-blue-950 to-yellow-300">
         <div class="home w-full container flex justify-between mx-auto bg-transparent h-[1024px] pt-10 px-[35px]">
             <div class="font-[Poppins] pt-[50px]">
                 <h1 class="text-[80px] text-white tracking-wider">Hello!</h1>
-                <h2 class="text-[12px] text-yellow-300 mt-[-20px]">Selamat Datang</h2>
-                <h2 class="text-[40px] text-white -tracking-tighter">Di Website</h2>
-                <div class="typing font-[Poppins] text-yellow-300 tracking-widest absolute"></div>
-                <br>
-                <p class="paragraf items-start mt-14 text-white w-[700px]">Hello, Selamat datang di website resmi keuangan kelas 11 rekayasa perangkat lunak tahun 2024/2025, website ini dibangun bertujuan untuk para member dapat melihat keuangan kas secara digital melalui website RPL<span class="text-yellow-300"> Finance</span></p>
+                <h2 class="text-[20px] text-yellow-300 mt-[-20px]">Selamat Datang</h2>
+                <h2 class="text-[45px] text-white -tracking-tighter">Di Website</h2>
+                <div class="typing font-[Poppins] text-yellow-300 tracking-widest absolute sm:pb-[-2000px]"></div>
+                <br><br>
+                <p class="paragraf mt-14 text-white sm:w-[300px] lg:w-[500px] xl:w-[600px]">Hello, Selamat datang di website resmi keuangan kelas 11 rekayasa perangkat lunak tahun 2024/2025, website ini dibangun bertujuan untuk para member dapat melihat keuangan kas secara digital melalui website RPL<span class="text-yellow-300"> Finance</span></p>
             </div>
 
             <div class="image pt-16">
