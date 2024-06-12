@@ -18,6 +18,27 @@
         }
         
     }
+    .typing{
+        font-size: 40px;
+    }
+    
+    .background{
+        @media only screen and (min-width: 0px) and (max-width: 596px){
+            height: 2000px;
+        }
+    }
+
+    .home{
+        @media only screen and (min-width: 0px) and (max-width: 596px){
+            flex-direction: column;
+        }
+    }
+    .paragraf{
+        @media only screen and (min-width: 0px) and (max-width: 770px){
+            padding-right: 140px;
+            width: 500px;
+        }
+    }
 </style>
 <!--js button-->
 <script>
@@ -26,32 +47,81 @@
 
         e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :(e.name = "menu" , list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'))
     }
+    
 </script>
+
+<!--auto typing -->
+<script>
+    // Array dari teks yang ingin diketikkan
+const texts = ["RPL", "Keuangan", "Profile","Informasi"];
+let textIndex = 0;
+let charIndex = 0;
+
+function type() {
+  // Dapatkan elemen tempat teks akan diketikkan
+  const typingElement = document.querySelector('.typing');
+
+  if (charIndex < texts[textIndex].length) {
+    // Tambahkan karakter berikutnya ke elemen
+    typingElement.textContent += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 150); // Atur waktu untuk karakter berikutnya
+  } else {
+    // Hapus teks setelah selesai
+    setTimeout(erase, 150);
+  }
+}
+
+function erase() {
+  const typingElement = document.querySelector('.typing');
+
+  if (charIndex > 0) {
+    // Hapus karakter terakhir dari elemen
+    typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 150); // Atur waktu untuk menghapus karakter berikutnya
+  } else {
+    // Pindah ke teks berikutnya setelah selesai menghapus
+    textIndex = (textIndex + 1) % texts.length;
+    setTimeout(type,150);
+  }
+}
+
+// Mulai animasi mengetik
+document.addEventListener('DOMContentLoaded', function() {
+  // Pastikan elemen ada di halaman
+  if (document.querySelector('.typing')) {
+    setTimeout(type, 150); // Tunda awal animasi
+  }
+});
+
+</script>
+
 
 
 <body>
     <nav class="fixed bg-blue-950 h-[80px] w-screen z-50 shadow-xl">
         <div class="container h-[80px] mx-auto py-6 px-8 flex items-center justify-between">
             
-               <span class="text-2xl text-white font-[Poppins] cursor-pointer z-[-1]">RPL</span>
-               <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:text-cyan-400" name="Menu" onclick="Menu(this)" width="39px" height="39px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+               <div class="text-lg text-white font-[Poppins] cursor-pointer z-[-1] flex  flex-col">RPL<span class="font-[Poppins] mt-[-10px] text-yellow-300"> Finance</span></div>
+               <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:bg-yellow-300" name="Menu" onclick="Menu(this)" width="35px" height="35px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                 </svg>
             
             <ul class="pb-[25px] md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transiton-all ease-in doration-500">
                 <li class="mx-4 my-6 md:my-o">
-                    <a href="#" class="text-xl text-white hover:text-cyan-300 duration-200">Home</a>
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Home</a>
                 </li>
                 <li class="mx-4 my-6 md:my-o">
-                    <a href="#" class="text-xl text-white hover:text-cyan-300 duration-200">Informasi</a>
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Informasi</a>
                 </li>
                 <li class="mx-4 my-6 md:my-o">
-                    <a href="#" class="text-xl text-white hover:text-cyan-300 duration-200">Keuangan</a>
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Keuangan</a>
                 </li>
                 <li class="mx-4 my-6 md:my-o">
-                    <a href="#" class="text-xl text-white hover:text-cyan-300 duration-200">Profile</a>
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Profile</a>
                 </li>
-                <buttom class="bg-white text-black font-[Poppins] px-2 py-2 mx-4 hover:bg-cyan-500 hover:text-zinc-50 duration-200 rounded-md">Beta Version</buttom>
+                <buttom class="bg-white text-black font-[Poppins] px-2 py-2 mx-4 hover:text-yellow-300 hover:text-zinc-50 duration-200 rounded-md">Beta Version</buttom>
             </ul>
                        
         </div>
@@ -60,13 +130,19 @@
 
     <br><br><br>
     <!--homepage-->
-    <div class="w-full h-[1024px] bg-gradient-to-r from-blue-950 to-blue-500">
-        <div class="w-full container mx-auto bg-transparent h-[1024px] px-8">
-            <div class="font-[Poppins]">
-                <h1 class="text-2xl text-white pt-10">Hello!</h1>
-                <h2 class="text-xl text-white ">Selamat Datang Di</h2>
-                <h2 class="text-2xl text-white flex">Classfinance</h2>
-                <p></p>
+    <div class="background w-full h-[1024px] bg-gradient-to-r from-blue-950 to-orange-500">
+        <div class="home w-full container flex justify-between mx-auto bg-transparent h-[1024px] pt-10 px-[35px]">
+            <div class="font-[Poppins] pt-[50px]">
+                <h1 class="text-[80px] text-white tracking-wider">Hello!</h1>
+                <h2 class="text-[12px] text-yellow-300 mt-[-20px]">Selamat Datang</h2>
+                <h2 class="text-[40px] text-white -tracking-tighter">Di Website</h2>
+                <div class="typing font-[Poppins] text-yellow-300 tracking-widest absolute"></div>
+                <br>
+                <p class="paragraf items-start mt-14 text-white w-[700px]">Hello, Selamat datang di website resmi keuangan kelas 11 rekayasa perangkat lunak tahun 2024/2025, website ini dibangun bertujuan untuk para member dapat melihat keuangan kas secara digital melalui website RPL<span class="text-yellow-300"> Finance</span></p>
+            </div>
+
+            <div class="image pt-16">
+                <img src="asets_img/logo_sekolah.png" class="mx-auto" width="400px" height="400px">
             </div>
 
 
