@@ -6,6 +6,9 @@ module.exports = {
     './components/**/*,{html,js}',
     './pages/**/*,{html,js}',
     './index.html',
+    './informasi.html',
+    './keuangan.html',
+    './galeri.html',
   ],
   theme: {
     extend: {

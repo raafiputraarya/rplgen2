@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Keuangan Kelas 11 Rekaya Perangkat Lunak SMKM 3">
+    <meta name="keywords" content="informasi, keungankelas, rpl, rekayaperangkatlunak, kelas11, smkmuh3">
+    <title>Rekayasa Perangkat lunak Gen 2.0</title>
+    <link href="output.css" rel="stylesheet">
+    <link href="navStyle.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="asets_img/logo_sekolah.png">
+</head>
+<body>
+    <div class="indicator fixed pt-0 h-[8px] bg-blue-950 z-20 w-[100%] ">
+        <div class="progress-container w-[100%] h-[6px] bg-blue-950">
+            <div class="progress-bar h-[6px] bg-gradient-to-r from-blue-700 to-yellow-300 w-[0%] rounded-[50px]" id="myBar"></div>
+        </div>
+    </div>
+    <nav class="fixed bg-blue-950 h-[80px] w-full z-10 shadow-2xl">
+        <div class="container h-[80px] mx-auto py-6 px-8 flex items-center justify-between">
+            
+            <div class="text-lg text-white font-[Poppins] cursor-pointer z-[-1] flex  flex-col">RPL<span class="font-[Poppins] mt-[-10px] text-yellow-300"> Finance</span></div>
+               <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:text-yellow-300 md:hidden" name="Menu" onclick="Menu(this)" width="35px" height="35px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                </svg>
+            
+            <ul class="pb-[25px] md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 right-[-400px] transition-all ease-out duration-300">
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="index.html" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Home</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="informasi.html" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Informasi</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Keuangan</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Galeri</a>
+                </li>
+                <buttom class="bg-white text-black font-[Poppins] px-8 py-2 mx-4 hover:text-yellow-300 border-4 hover:border-yellow-500 duration-200 rounded-md">V 1.0</buttom>
+            </ul>         
+        </div>
+    </nav>
+
+
+    <br><br><br><br><br>
+    <div id="Modal" class="modal fixed bottom-0 end-0 z-[60] w-[300px] md:w-[500px] mb-4 mr-4 mx-auto p-4 bg-white rounded-lg border-2 shadow-md shadow-gray-700 hidden">
+        <div class="">
+            <div class=" flex justify-between">
+                <div class="text-sm text-blue-950 font-bold cursor-pointer flex flex-col">RPL<span class="font-bold mt-[-6px] text-yellow-500"> Finance</span></div>
+                <div id="closeModal" class="w-8 h-9 text-xl px-2 hover:border-black hover:border-2 rounded-[8px] hover:bg-blue-950 hover:text-white">
+                    &times;
+                </div>
+            </div>
+            <div class="mt-2"> 
+                <p class="text-[Poppins] sm:text-sm md:text-md lg:text-xl tracking-tight">Selamat Datang Di Website Keuangan kelas RPL 2023/2024, jika Kalian Butuh Bantuan Chat Admin Segera Ya!</p>
+                <button href="mailto:classgenerasi2@gmail.com" class="w-24 h-8 text-[10px] font-semibold mt-2 px-2 border-black border-[1px] rounded-md bg-yellow-300 hover:bg-blue-950 hover:text-white" >
+                    <a href="mailto:classgenerasi2@gmail.com?subject=class%20report&body=You%20are%20invited%20to%20a%20big%20class%20report!"> Chat Admin!</a> 
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="info" class="bg-white max-w-screen-xl min-w-screen-sm h-[1700px] mx-auto container">
+         <div class="flex justify-between px-6 py-4 font-semibold ">
+            <div>
+                <h2 class="text-xl">Informasi</h2>
+                <span class="text-[12px] text-Poppins">Uangkas 2023/2024</span>
+            </div>
+            <div class="text-right">
+                <h2 class="text-xl">Update</h2>
+                <span class="text-[12px] text-Poppins">18 Juni 2024 21:40</span>
+            </div>
+        </div>
+
+        <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-blue-950 dark:bg-gray-700 dark:text-gray-400 hover:bg-blue-950 hover:text-white">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                              Nama
+                        </th>
+                          <th scope="col" class="px-6 py-3">
+                              Kelas 10
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Kelas 11
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Total Kekurangan
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Status
+                          </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-yellow-400">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Ahmad Cristiano
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                              <div class="w-16 h-4 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Rajin</div>
+                          </td>
+                      </tr>
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-yellow-400">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Andhika Putra
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                              <div class="w-16 h-4 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Rajin</div>
+                          </td>
+                      </tr>
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Fadhil Arasyid
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Fajar Fakhir
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-yellow-400">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Fariq Maraya Rizqi
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp5.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp5.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-20 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Belum Lunas</div>
+                              <div class="w-16 h-4 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Rajin</div>
+                          </td>
+                      </tr> 
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Gilang Muharram
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp67.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp115.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp182.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Habib Ilmi Nuris
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Ibnu Zaki Hisyam
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Ihsan Ubaidillah
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Kaka Naufal Dziban
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Khresna Ramadhan
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Ludgerus Tuan Sabon
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp75.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp75.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Marchel Ardiansyah
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Maulana Saputra
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp105.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp105.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Abdul Aziz
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp25.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp25.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Aziz Zaelain
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp31.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp110.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp141.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Naufal Radithya
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-yellow-400">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Raafi Putra arya
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                              <div class="w-16 h-4 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Rajin</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Rasya Akbar
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp90.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp90.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Rafli Setiawan
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp120.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp115.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp235.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Rajab Supriyadin
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td> 
+                          <td class="px-6 py-4 flex">
+                          <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                      </td>
+                      </tr>
+                     
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-red-300 to-red-700">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              Vebby Bhani Saputra
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp5.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp110.000
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp115.000
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-36 h-4 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">Belum Lunas</div>
+                          </td>
+                      </tr>
+                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gradient-to-r from-green-300 to-green-600">
+                          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              M. Rayyi Ramadhan
+                          </th>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4">
+                              Rp -
+                          </td>
+                          <td class="px-6 py-4 flex">
+                              <div class="w-16 h-4 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">Lunas</div>
+                              
+                          </td>
+                      </tr>
+                  </tfoot>
+                  <thead class="text-xs text-white uppercase bg-blue-950 dark:bg-gray-700 dark:text-gray-400 hover:bg-blue-950 hover:text-white">
+                      <tr>
+                          <th scope="col" class="px-6 py-3">
+                              Total
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Rp223.000
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Rp750.000
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Rp973.000
+                          </th>
+                          <th scope="col" class="px-6 py-3 flex">
+                              <div class="w-16 h-4 border-2 border-green-500 bg-gradient-to-r from-green-300 to-green-600 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center mr-2">14/23</div>
+                              <div class="w-16 h-4 border-2 border-red-500 bg-gradient-to-r from-red-300 to-red-700 rounded-[10px] py-4 text-white text-bold text-[12px] flex items-center justify-center">9/23</div>
+                          </th>
+                      </tr>
+                </tfoot>
+            </table>
+        </div>       
+    </div>
+
+    <div class="w-full h-72 mt-[16px] bg-yellow-300">
+        <h1 class="flex justify-center text-center sm:text-4xl md:text-5xl font-[Poppins] py-20">Coming Soon!<br>V 1.5</h1>
+    </div>
+
+    <div class="bg-blue-950 w-full mt-24">
+        <div class="container mx-auto ">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 text-white gap-5 px-5 py-2 font-[Poppins] text-md ">
+                    <div class="grid row-span-2 mt-2">
+                        <div class="flex ">
+                            <span class="">
+                                <h1 class="text-xl">RPL</h1>
+                                <h1 class="text-xl -mt-1 text-yellow-300">Finance</h1>
+                            
+                            </span>
+                            <span class="px-5 block">
+                                <h1 class=" text-4xl pt-2">l</h1>
+                                
+                            </span>
+                            <span>
+                                <img class="" width="55px" height="55px" src="asets_img/logo_sekolah.png">
+                            </span>
+                        </div>
+
+                        <div class="grid row-span-2 text-[10px] my-4">
+                            <p>Jl. Nangka No.3, Ciputat, Kec. Ciputat, Kota Tangerang Selatan, Banten 15411 <br>Website keuangan kelas 11 rekayasa perangkat lunak angakatan 2 SMK Muhammadiyah 3 Tangerang Selatan, Banten, Indonesia.</p>
+                        </div>         
+                    </div>
+                   
+                <div class="text-white sm:text-sm md:text-md lg:text-lg">
+                    <ul class="flex-row md:text-right">
+                        <li class="my-2">
+                            <a href="index.html" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="informasi.html" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Informasi</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Keuangan</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Galeri</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+              
+            </div>
+        </div>
+   
+        <div class="">
+            <span class="text-center px-2 ">
+                <p class="text-[11px] text-slate-300 font-[Poppins]"><i>&copy; rplgen2_2023-2024. All rights reserved</i></p>
+            </span>
+        </div>
+    </div> 
+</body>
+    <script src="progresBar.js">
+    </script>
+    <script src="navButton.js">
+    </script>
+    <script src="modalNotif.js">
+    </script>
+</html>

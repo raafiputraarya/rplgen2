@@ -1,202 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Keuangan Kelas 11 Rekaya Perangkat Lunak SMKM 3">
+    <meta name="keywords" content="informasi, keungankelas, rpl, rekayaperangkatlunak, kelas11, smkmuh3">
     <title>Rekayasa Perangkat lunak Gen 2.0</title>
     <link href="output.css" rel="stylesheet">
+    <link href="navStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="asets_img/logo_sekolah.png">
 </head>
-
-<!--css-->
-<style>
-    .button{
-        @media only screen and (min-width: 760px) and (max-width: 40000px){
-            display: none;
-        }
-        
-    }
-    .typing{
-        font-size: 40px;
-    }
-    
-    .background{
-        @media only screen and (min-width: 0px) and (max-width: 726px){
-            height: 1000px;
-        }
-    }   
-</style>
-
-<!--js button-->
-<script>
-    function Menu(e){
-        let list = document.querySelector('ul');
-
-        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :(e.name = "menu" , list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'))
-    }
-    
-</script>
-
-<!--auto typing -->
-<script>
-    // Array dari teks yang ingin diketikkan
-const texts = ["RPL", "Keuangan", "Profile","Informasi"];
-let textIndex = 0;
-let charIndex = 0;
-
-function type() {
-  // Dapatkan elemen tempat teks akan diketikkan
-  const typingElement = document.querySelector('.typing');
-
-  if (charIndex < texts[textIndex].length) {
-    // Tambahkan karakter berikutnya ke elemen
-    typingElement.textContent += texts[textIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, 150); // Atur waktu untuk karakter berikutnya
-  } else {
-    // Hapus teks setelah selesai
-    setTimeout(erase, 150);
-  }
-}
-
-function erase() {
-  const typingElement = document.querySelector('.typing');
-
-  if (charIndex > 0) {
-    // Hapus karakter terakhir dari elemen
-    typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 150); // Atur waktu untuk menghapus karakter berikutnya
-  } else {
-    // Pindah ke teks berikutnya setelah selesai menghapus
-    textIndex = (textIndex + 1) % texts.length;
-    setTimeout(type,150);
-  }
-}
-
-// Mulai animasi mengetik
-document.addEventListener('DOMContentLoaded', function() {
-  // Pastikan elemen ada di halaman
-  if (document.querySelector('.typing')) {
-    setTimeout(type, 150); // Tunda awal animasi
-  }
-});
-
-</script>
-
-
-
-
-
-
-<!--Animasi Angka-->
-<script>
-  // Fungsi untuk menganimasikan angka dengan format titik, koma, dan persen
-function animateNumber(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const currentNumber = Math.floor(progress * (end - start) + start);
-        // Format angka menjadi string dengan titik sebagai pemisah ribuan
-        element.innerText = new Intl.NumberFormat('id-ID').format(currentNumber);
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        } else {
-            element.classList.remove('animated'); // Menghapus class 'animated' setelah animasi selesai
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Mendeteksi event scroll pada window
-window.addEventListener('scroll', () => {
-    const numberElement = document.getElementById('number'); // Ganti dengan ID elemen Anda
-    // Format targetNumber sebagai string dengan titik, koma, dan persen
-    const targetNumber = '32'; // Contoh format dengan titik, koma, dan persen
-    // Mengonversi string targetNumber ke angka untuk animasi
-    const targetValue = parseFloat(targetNumber.replace(/\.|,|%| /g, ''));
-
-    // Mengatur kondisi untuk memulai animasi
-    const position = numberElement.getBoundingClientRect();
-    
-    // Jika elemen dalam viewport dan belum di-animasikan
-    if (position.top < window.innerHeight && position.bottom >= 0 && !numberElement.classList.contains('animated')) {
-        numberElement.classList.add('animated');
-        animateNumber(numberElement, 0, targetValue, 3000); // Durasi animasi adalah 2000ms atau 2 detik
-    }
-});
-
-window.addEventListener('scroll', () => {
-    const numberElement = document.getElementById('number2'); // Ganti dengan ID elemen Anda
-    // Format targetNumber sebagai string dengan titik, koma, dan persen
-    const targetNumber = '-1,726,000'; // Contoh format dengan titik, koma, dan persen
-    // Mengonversi string targetNumber ke angka untuk animasi
-    const targetValue = parseFloat(targetNumber.replace(/\.|,|%| /g, ''));
-
-    // Mengatur kondisi untuk memulai animasi
-    const position = numberElement.getBoundingClientRect();
-    
-    // Jika elemen dalam viewport dan belum di-animasikan
-    if (position.top < window.innerHeight && position.bottom >= 0 && !numberElement.classList.contains('animated')) {
-        numberElement.classList.add('animated');
-        animateNumber(numberElement, 0, targetValue, 3000); // Durasi animasi adalah 2000ms atau 2 detik
-    }
-});
-
-window.addEventListener('scroll', () => {
-    const numberElement = document.getElementById('number3'); // Ganti dengan ID elemen Anda
-    // Format targetNumber sebagai string dengan titik, koma, dan persen
-    const targetNumber = '-26%'; // Contoh format dengan titik, koma, dan persen
-    // Mengonversi string targetNumber ke angka untuk animasi
-    const targetValue = parseFloat(targetNumber.replace(/\.|,|%| /g, ''));
-
-    // Mengatur kondisi untuk memulai animasi
-    const position = numberElement.getBoundingClientRect();
-    
-    // Jika elemen dalam viewport dan belum di-animasikan
-    if (position.top < window.innerHeight && position.bottom >= 0 && !numberElement.classList.contains('animated')) {
-        numberElement.classList.add('animated');
-        animateNumber(numberElement, 0, targetValue, 3000); // Durasi animasi adalah 2000ms atau 2 detik
-    }
-});
-</script>
-
 <body>
-    <nav class="fixed bg-blue-950 h-[80px] w-full z-50 shadow-xl">
+    <div id="Modal" class="modal fixed bottom-0 end-0 z-[60] w-[300px] md:w-[500px] mb-4 mr-4 mx-auto p-4 bg-white rounded-lg border-2 shadow-md shadow-gray-700 hidden">
+            <div class="">
+                <div class=" flex justify-between">
+                    <div class="text-sm text-blue-950 font-bold cursor-pointer flex flex-col">RPL<span class="font-bold mt-[-6px] text-yellow-500"> Finance</span></div>
+                    <div id="closeModal" class="w-8 h-9 text-xl px-2 hover:border-black hover:border-2 rounded-[8px] hover:bg-blue-950 hover:text-white">
+                        &times;
+                    </div>
+                </div>
+                <div class="mt-2"> 
+                    <p class="text-[Poppins] sm:text-sm md:text-md lg:text-xl tracking-tight">Selamat Datang Di Website Keuangan kelas RPL 2023/2024, jika Kalian Butuh Bantuan Chat Admin Segera Ya!</p>
+                    <button href="mailto:classgenerasi2@gmail.com" class="w-24 h-8 text-[10px] font-semibold mt-2 px-2 border-black border-[1px] rounded-md bg-yellow-300 hover:bg-blue-950 hover:text-white" >
+                        <a href="mailto:classgenerasi2@gmail.com?subject=class%20report&body=You%20are%20invited%20to%20a%20big%20class%20report!"> Chat Admin!</a> 
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    <div class="indicator fixed pt-0 h-[8px] bg-blue-950 z-20 w-[100%] ">
+        <div class="progress-container w-[100%] h-[6px] bg-blue-950">
+            <div class="progress-bar h-[6px] bg-gradient-to-r from-blue-700 to-yellow-300 w-[0%] rounded-[50px]" id="myBar"></div>
+        </div>
+    </div>
+    <nav class="fixed bg-blue-950 h-[80px] w-full z-10 shadow-xl mt-0">
         <div class="container h-[80px] mx-auto py-6 px-8 flex items-center justify-between">
             
-               <div class="text-lg text-white font-[Poppins] cursor-pointer z-[-1] flex  flex-col">RPL<span class="font-[Poppins] mt-[-10px] text-yellow-300"> Finance</span></div>
+               <div class="text-lg text-white font-[Poppins] cursor-pointer z-[-1] flex flex-col">RPL<span class="font-[Poppins] mt-[-10px] text-yellow-300"> Finance</span></div>
                <svg xmlns="http://www.w3.org/2000/svg" class="button text-white cursor-pointer items-center hover:text-yellow-300" name="Menu" onclick="Menu(this)" width="35px" height="35px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                 </svg>
             
-            <ul class="pb-[25px] md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transiton-all ease-in doration-500">
-                <li class="mx-4 my-6 md:my-o">
-                    <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Home</a>
+            <ul class="pb-[25px] md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-blue-950 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 right-[-400px] transition-all ease-out duration-300">
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="index.html" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Home</a>
                 </li>
-                <li class="mx-4 my-6 md:my-o">
-                    <a href="#info" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Informasi</a>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="informasi.html" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Informasi</a>
                 </li>
-                <li class="mx-4 my-6 md:my-o">
+                <li class="mx-4 my-6 md:my-0">
                     <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Keuangan</a>
                 </li>
-                <li class="mx-4 my-6 md:my-o">
+                <li class="mx-4 my-6 md:my-0">
                     <a href="#" class="text-lg font-[Poppins] text-white hover:text-yellow-300 duration-200">Profile</a>
                 </li>
-                <buttom class="bg-white text-black font-[Poppins] px-2 py-2 mx-4 hover:text-yellow-300 duration-200 rounded-md">Beta Version</buttom>
+                <buttom class="bg-white text-black font-[Poppins] px-8 py-2 mx-4 hover:text-yellow-300 border-4 hover:border-yellow-500 duration-500 rounded-md">V 1.0</buttom>
             </ul>
                        
         </div>
-    </nav>
-
-
-
+    </nav> 
     <br><br><br>
-    <!--homepage-->
-    <div class="background w-full sm:h-[680px] md:h-[600px] lg:h-[600px] bg-gradient-to-r from-blue-900 to-yellow-300 pb-5">
+    <div id="homepage" class="background w-full sm:h-[680px] md:h-[600px] lg:h-[600px] bg-gradient-to-r from-blue-900 to-yellow-300 pb-5">
         <div class="home container grid sm:grid-col-1 md:grid-cols-2 mx-auto bg-transparent h-[1024px] pt-10 px-[35px]">
             <div class="font-[Poppins] pt-[50px]">
                 <h1 class="text-[80px] text-white tracking-wider">Hello!</h1>
@@ -207,397 +74,211 @@ window.addEventListener('scroll', () => {
                 <p class="paragraf mt-14 text-white sm:w-[300px] lg:w-[500px] xl:w-[600px]">Hello, Selamat datang di website resmi keuangan kelas 11 rekayasa perangkat lunak tahun 2024/2025, website ini dibangun bertujuan untuk para member dapat melihat keuangan kas secara digital melalui website RPL<span class="text-yellow-300"> Finance</span></p>
             </div>
 
-            <div class="image pt-10 pr-[-2000px]">
-                <img src="asets_img/logo_sekolah.png" class="mx-auto mt-[10px]" width="400px" height="400px">  
+            <div class="image pt-5 pr-[-2000px]">
+                <img src="asets_img/keuangan_kelas.png" class="mx-auto pl-10 mt-[5px] flex-shrink-0 sm:w-[580px] sm:h-[400px] md:w-[450px] md:h-[350px] lg:h-[400px] lg:w-[500px]">  
             </div> 
         </div>
     </div>
 
-
-    <!-- testimoni -->
     <div class="w-full bg-gradient-to-r from-blue-900 to-yellow-300">
-        <div class="counters bg-transparent max-w-screen-xl sm:h-64 md:h-44 lg:h-40 -mt-4 py-6 px-3  mx-auto grid sm:grid-cols-1 md:grid-cols-3 items-center text-center gap-4">
+        <div class="counters bg-transparent max-w-screen-xl sm:h-64 md:h-52 lg:h-64 -mt-4 py-3 px-3 mx-auto grid sm:grid-cols-1 md:grid-cols-3 items-center text-center gap-4">
             <div class="counter text-2xl">
+                    <img src="asets_img/illustration-user-avatar-icon.png" class="w-[100px] h-[100px] mx-auto">
                     <h5 class="text-md text-white font-[Poppins] pb-2 text-sm">Member</h5>
-                    <span class="font-[Poppins] text-yellow-300 sm:text-2xl md:text-3xl lg:text-5xl" id="number">100</span>
+                    <span class="font-semibold text-yellow-300 sm:text-2xl md:text-3xl lg:text-5xl" id="number"></span>
             </div>
             <div class="counter text-2xl">
+                    <img src="asets_img/wallet-background-with-graphics-flat-design.png" class="w-[100px] h-[100px] mx-auto">
                     <h5 class="text-md text-white font-[Poppins] pb-4 text-sm">Total Pengeluaran </h5>
-                    <span class="font-[Poppins] text-yellow-300 sm:text-2xl md:text-3xl lg:text-5xl" id="number2">100</span>
+                    <span class="font-semibold text-yellow-300 sm:text-2xl md:text-3xl lg:text-5xl" id="number2">100</span>
             </div>
-            <div class="counter text-2xl">
-                    <h5 class="text-md text-white font-[Poppins] pb-4 text-sm">Persentase Penurunan</h5>
-                    <span class="font-[Poppins] text-white sm:text-2xl md:text-3xl lg:text-5xl" id="number3">-26%</span>
+            <div class="counter text-2xl ">
+                    <img src="asets_img/flat-statistics-presentation-with-arrows.png" class="w-[100px] h-[100px] mx-auto">
+                    <h5 class="text-md text-white font-[Poppins] pb-4 text-sm">Persentase</h5>
+                    <span id="tentangkami" class="font-semibold text-white sm:text-2xl md:text-3xl lg:text-5xl flex justify-center"id="number3">+21.7%<svg class="pl-1" xmlns="http://www.w3.org/2000/svg" class="" width="50px" height="50px" viewBox="0 0 24 24"><path fill="#00ff59" d="M3.4 18L2 16.6l7.4-7.45l4 4L18.6 8H16V6h6v6h-2V9.4L13.4 16l-4-4z"/></svg></span>
             </div>
         </div>
     </div>
-    <!--Informasi-->
-      
-        <div id="info" class="bg-white max-w-screen-xl min-w-screen-sm h-72 mx-auto mt-10">
-            <div class="flex justify-between px-6 py-4 font-semibold ">
-                <div>
-                    <h2 class="text-xl">Informasi</h2>
-                    <span class="text-[12px]">Uangkas 2023/2024</span>
-                </div>
-                <div class="text-right">
-                    <h2 class="text-xl">Update</h2>
-                    <span class="text-[12px]">13 Juni 2024</span>
-                </div>
+
+    <div  class="container mx-auto md:h-[450px] sm:h-[680px] my-20 grid place-self-center sm:grid-cols-1 md:grid-cols-2 px-5 ">
+        <div>
+            <div class="bg-blue-950 w-36 h-12 text-white font-[Poppins] text-md rounded-tr-lg rounded-br-lg flex items-center justify-center mb-4 px-0">Tentang kami</div>
+            <img src="asets_img/tentang_kami.png" width="500px" height="450px" class=" mx-auto hover:-translate-y-10 hover:duration-300 hover:ease-in-out">
+        </div>
+
+        <div class="py-16"><p class="font-[Poppins] sm:text-sm md:text-md lg:text-lg px-4 pt-5 capitalize "><span class="text-blue-700 text-bold ">RPL</span><span class="text-yellow-300 text-bold "> Finance</span> merupakan webiste/platform keuangan kelas yang bertujuan agar para siswa atau para member kelas dapat melihat pergerakan keuangan secara transparan dan juga memudahkan member memantau secara daring atau online.
+        <br><br> 
+        website ini dibuat pada tanngal 10 juni 2024, dengan menggunakan HTML, CSS, dan javascript dasar. Selain itu website ini masih bersifat statis.
+        </p>
+        <br>
+        <span id="keunggulandanlayanan" class=" px-4"><i>~ Bendahara rpl 2023-2024  </i></span>
+        </div>
+    </div>
+    
+    <div  class="container mx-auto sm:h-[900px] md:h-[860px] lg:h-[500px] bg-transparent">
+        <div class="bg-blue-950 w-60 h-12 text-white font-[Poppins] text-md rounded-tr-lg rounded-br-lg flex items-center justify-center mb-12 ml-5 capitalize">keunggulan dan layanan</div>
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-4 mx-4">
+            <div class="md:px-5 md:w-96 lg:w-72 xl:w-96 h-92 flex flex-col items-center justify-center text-center sm:text-md md:text-md px-4 py-4 rounded-xl hover:border-blue-400 hover:border-r-2 hover:border-l-2 hover:shadow-2xl duration-200 hover:shadow-blue-800 hover:-translate-y-10">
+                <img src="asets_img/keunganonline.png" class="h-[186px]">
+                <h1 class="text-[20px] text-center font-bold my-2 capitalize">informasi keuangan</h1>
+                <span class="text-sm text-wrap font-[Poppins]">memberikan dan memberitahukan informasi terkait keuangan kelas agar para member dapat melihat secara daring/online mengenai keuangan kelas</span>
             </div>
-
-
-            
-
-            <div class="relative overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Nama
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                Kelas 10
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                Kelas 11
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                Total
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Ahmad Cristiano
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Andhika Putra
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Fadhil Arasyid
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Fajar Fakhir
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                65.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                65.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Fariq Maraya Rizqi
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                5.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                5.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Gilang Muharram
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                67000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                115000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                182.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Habib Ilmi Nuris
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                50.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                50.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Ibnu Zaki Hisyam
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                75.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                75.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Ihsan Ubaidillah
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                65.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                65.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Kaka Naufal Dziban
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Khresna Ramadhan
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                40.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                40.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Ludgerus Tuan Sabon
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                75.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                75.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Marchel Ardiansyah
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Maulana Saputra
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                105.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                105.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Abdul Aziz
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Aziz Zaelain
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                31.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                110.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                141.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Naufal Radithya
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                30.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Raafi Putra arya
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Rasya Akbar
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                90.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                90.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Rafli Setiawan
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                120.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                115.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                235.000
-                            </td>
-                        </tr> <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Rajab Supriyadin
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                25.000
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Vebby Bhani Saputra
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                5.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                110.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                115.000
-                            </td>
-                        </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                M. Rayyi Ramadhan
-                            </th>
-                            <td class="px-6 py-4 text-center">
-                                -
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                55.000
-                            </td>
-                            <td class="px-6 py-4 text-center">
-                                55.000
-                            </td>
-                        </tr>
-                    </tfoot>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Total
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                223.000
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                1.240.000
-                            </th>
-                            <th scope="col" class="px-6 py-3 text-center">
-                                1.463.000
-                            </th>
-                        </tr>
-                    </tfoot>
-                </table>
+            <div class="md:px-5 md:w-96 lg:w-80 xl:w-96 h-92 flex flex-col items-center justify-center text-center sm:text-md md:text-md px-4 py-4 rounded-xl hover:border-blue-400 hover:border-r-2 hover:border-l-2 hover:shadow-2xl duration-200 hover:shadow-blue-800 hover:-translate-y-10">
+                <img src="asets_img/transparanakeuangan.png" class="h-[186px]">
+                <h1 class="text-[20px] text-center font-bold my-2 capitalize">Terbuka dan Transparan</h1>
+                <span class="text-sm text-wrap font-[Poppins]"><b class="text-blue-500">RPL</b><b class="text-yellow-400"> Finance</b> akan terus berupaya terbuka dan transparan dalam memegang amanah sebagai badan keungan kelas dengan cara mendata semua kuangan secara terstruktur</span>
+            </div>
+            <div class="md:px-5 md:w-96 lg:w-72 xl:w-96 h-92 flex flex-col items-center justify-center text-center md:col-span-2 lg:col-span-1 sm:text-md md:text-md px-4 py-4 rounded-xl hover:border-blue-400 hover:border-r-2 hover:border-l-2 hover:shadow-2xl duration-200 hover:shadow-blue-800 hover:-translate-y-10">
+                <img src="asets_img/websitekeuangan.png" class="h-[186px]">
+                <h1 class="text-[20px] text-center font-bold my-2 capitalize">Laporan Bersifat Online</h1>
+                <span id="topranking" class="text-sm text-wrap font-[Poppins]">semua jenis laporan yang diberikan berjenis digital, agar mempermudah para member untuk memantau keuangan secara online tanpa harus datang pada badan pengurus</span>
             </div>
         </div>
+    </div>
+
+    <div  class="w-full h-[850px] md:h-[600px] lg:h-[500px] mt-20 md:mt-16 lg:mt-24 bg-yellow-300 rounded-tl-[200px] rounded-br-[200px]">
+    <h1 class="text-center pt-32 md:pt-12 font-[Poppins] sm:text-sm md:text-lg"><b>TOP RANK MEMBER TERBAIK 2023-2024</b></h1>
+        
+    <div  class="container mx-auto pt-20 md:pt-12">
+        <div class="overflow-x-auto border-1 mx-5 rounded-md">
+          <table class="min-w-full bg-white border-2 border-gray-300 hover:border-white">
+            <thead class="bg-blue-950 text-white border-2 border-gray-300 hover:border-white">
+              <tr>
+                <th class="px-3 py-3">Rank</th>
+                <th class="px-14 py-3 text-left">Nama </th>
+                <th class="px-14 py-3 text-left">Transaksi Terakhir</th>
+                <th class="px-14 py-3 text-left">Title</th>
+                
+              </tr>
+            </thead>
+            <tbody class="border-2 border-gray-300">
+              <tr class="bg-gradient-to-b from-yellow-300 to-yellow-100 border-2 border-gray-300 hover:border-gray-500">
+                <th class="px-3 py-3">1st</th>
+                <th class="px-14 py-3 text-left">Ahmad Cristiano</th>
+                <th class="px-14 py-3 text-left">30 Mei 2024</th>
+                <th class="px-14 py-3 text-left">KING</th>
+              </tr>
+              <tr class="bg-gradient-to-b from-gray-300 to-gray-100 border-2 border-gray-300 hover:border-gray-500">
+                <th class="px-3 py-3">2nd</th>
+                <th class="px-14 py-3 text-left">Andhika Putra</th>
+                <th class="px-14 py-3 text-left">30 Mei 2024</th>
+                <th class="px-14 py-3 text-left">Rajin</th>
+              </tr>
+              <tr class="bg-gradient-to-b from-orange-300 to-orange-100 border-2 border-gray-300 hover:border-gray-500">
+                <th class="px-3 py-3">3rd</th>
+                <th class="px-14 py-3 text-left">M. Raafi Putra arya</th>
+                <th class="px-14 py-3 text-left">13 Juni 2024</th>
+                <th class="px-14 py-3 text-left">Lumayan Rajin</th>
+              </tr>
+              <tr class="bg-gradient-to-b from-orange-300 to-orange-100 border-2 border-gray-300 hover:border-gray-500">
+                <th class="px-3 py-3">4th</th>
+                <th class="px-14 py-3 text-left">Fariq Maraya Rizqi</th>
+                <th class="px-14 py-3 text-left">28 Mei 2024</th>
+                <th class="px-14 py-3 text-left">Lumayan</th>
+              </tr>
+                <tr class="bg-gradient-to-b from-orange-300 to-orange-100 opacity-20 border-2 border-gray-300 hover:border-gray-500">
+                    <th class="px-3 py-3 text-opacity-15">5th</th>
+                    <th class="px-14 py-3 text-left text-opacity-5">Habib Ilmi Nuris</th>
+                    <th class="px-14 py-3 text-left text-opacity-5">15 Juni 2024</th>
+                    <th class="px-14 py-3 text-left text-opacity-5">Sedikit malas</th> 
+                   
+                </tr>
+        
+             
+            </tbody>
+          </table>
+            </div> 
+            <buttom class="z-10 flex justify-center my-2">
+              <a href="informasi.html" class="hover:underline hover:underline-offset-4 duration-300 hover:duration-300 text-[Poppins] text-md hover:text-blue-600"><b>Lihat Lainnya...</b></a>
+            </buttom>
+                   
+          </div>
+        </div>
+      </div>
+    </div>
     
+   
+    <div class="bg-blue-950 w-full mt-24">
+        <div class="container mx-auto ">
+            <div class="grid sm:grid-cols-1 md:grid-cols-3 text-white gap-5 px-5 py-2 font-[Poppins] text-md ">
+                    <div class="grid row-span-2 mt-2">
+                        <div class="flex ">
+                            <span class="">
+                                <h1 class="text-xl">RPL</h1>
+                                <h1 class="text-xl -mt-1 text-yellow-300">Finance</h1>
+                            
+                            </span>
+                            <span class="px-5 block">
+                                <h1 class=" text-4xl pt-2">l</h1>
+                                
+                            </span>
+                            <span>
+                                <img class="" width="55px" height="55px" src="asets_img/logo_sekolah.png">
+                                
+                            </span>
+                        </div>
 
-    
-
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <div class="grid row-span-2 text-[11px] my-4">
+                            <p>Jl. Nangka No.3, Ciputat, Kec. Ciputat, Kota Tangerang Selatan, Banten 15411 <br>Website keuangan kelas 11 rekayasa perangkat lunak angakatan 2 SMK Muhammadiyah 3 Tangerang Selatan, Banten, Indonesia.</p>
+                        
+                        </div>         
+                    </div>
+                   
+                <div class="text-white sm:text-sm md:text-md lg:text-lg">
+                    <ul class="flex-row md:text-right">
+                        <li class="my-2">
+                            <a href="index.html" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="informasi.html" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Informasi</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Keuangan</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Galeri</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="">
+                    <ul class="flex-row sm:text-sm md:text-md lg:text-lg md:text-right">
+                        <li class="my-2">
+                            <a href="#homepage" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#tentangkami" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Tentang Kami</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#keunggulandanlayanan" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Keunggulan dan Layanan</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#topranking" class="hover:text-yellow-300 hover:underline underline-offset-4 duration-300">Top Ranking</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+   
+        <div class="">
+            <span class="text-center px-2 ">
+                <p class="text-[11px] text-slate-300 font-[Poppins]"><i>&copy; rplgen2_2023-2024. All rights reserved</i></p>
+            </span>
+        </div>
+    </div>       
     
 </body>
+<script src="progresBar.js">
+</script>
+<script src="autoTyping_homepage.js">
+</script>
+<script src="numberAnimation.js">
+</script>
+<script src="navButton.js">
+</script>
+<script src="modalNotif.js">
+</script>
+
 
 </html>

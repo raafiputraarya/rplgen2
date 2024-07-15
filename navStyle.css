@@ -1,0 +1,15 @@
+.button{
+    @media only screen and (min-width: 760px) and (max-width: 40000px){
+        display: none;
+    }
+    
+}
+.typing{
+    font-size: 40px;
+}
+
+.background{
+    @media only screen and (min-width: 0px) and (max-width: 726px){
+        height: 1000px;
+    }
+}   
